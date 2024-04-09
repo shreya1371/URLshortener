@@ -12,7 +12,7 @@ The URL Shortener is a web application designed to simplify long URLs into short
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/url-shortener.git
+   git clone https://github.com/shreya1371/URLshortener.git
    ```
 2. Install dependencies:
    ```bash
