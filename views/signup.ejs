@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>Signup</header>
+        <form name="myForm" action="/user" onsubmit="return validateForm()" method="post">
+            <div class="field name">
+                <div class="input-area">
+                    <input type="text" placeholder="Name" required name="name"/>
+                    <i class="icon fas fa-file-signature"></i>
+                </div>
+            </div>
+            <div class="field email">
+                <div class="input-area">
+                    <input type="text" placeholder="Email Address" required name="email"/>
+                    <i class="icon fas fa-envelope"></i>
+                </div>
+            </div>
+            <div class="field password">
+                <div class="input-area">
+                    <input type="password" placeholder="Password" required name="password"/>
+                    <i class="icon fas fa-lock"></i>
+                </div>
+            </div>
+            <input type="submit" value="Signup">
+        </form>
+        <div class="sign-txt">Already a user? <a href="/login">Login now</a></div>
+    </div>
+
+    <script>
+      function validateForm() {
+        let x = document.forms["myForm"]["email"].value;
+        let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if (!x.match(pattern)) {
+          alert("email is not valid");
+          return false;
+        }
+      }
+    </script>
+
+</body>
+
+</html>
