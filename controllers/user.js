@@ -5,10 +5,7 @@ async function handleUserSignup(req, res) {
   const { name, email, password } = req.body;
   const user = await User.findOne({email, });
   if(user){
-    res.send("Email already exist");
-    return res.render("signup", {
-      error: "Email already exist",
-    });
+    return res.status(400).json({ error: "email already exist" });
   }
 
   await User.create({
@@ -24,10 +21,7 @@ async function handleUserLogin(req, res) {
   const user = await User.findOne({ email, password });
 
   if (!user){
-    res.send("Invalid Username or Password");
-    return res.render("login", {
-      error: "Invalid Username or Password",
-    });
+    return res.status(400).json({ error: "invalid username of password" });
   }
 
   const token = setUser(user);
